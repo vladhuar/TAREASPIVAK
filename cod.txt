@@ -1,22 +1,46 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath} 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
 
-\title{Ecuaciones}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\title{Ecuaciones y Teoremas}
 \author{Vladimir Huarachi}
 
 \begin{document}
 
 \maketitle
 
-\section*{La ecuación}
+\section{Teorema}
 
-\begin{align*}
-    \text{Si} \quad & x + 3 = 5, \\
-    \text{entonces} \quad & (x + 3) + (-3) = 5 + (-3), \\
-    \text{de donde} \quad & x + (3 + (-3)) = 5 - 3 = 2, \\
-    \text{de donde} \quad & x + 0 = 2, \\
-    \text{de donde} \quad & x = 2.
-\end{align*}
+\begin{theorem}
+    Supóngase que \( f \) es continua en \( a \), y \( f(a) > 0 \). Entonces existe un número \( \delta > 0 \) tal que \( f(x) > 0 \) para todo \( x \) que satisface \( |x - a| < \delta \). Análogamente, si \( f(a) < 0 \), entonces existe un número \( \delta > 0 \) tal que \( f(x) < 0 \) para todo \( x \) que satisface \( |x - a| < \delta \).
+\end{theorem}
+
+\noindent\textbf{DEMOSTRACIÓN.}
+
+\begin{proof}
+    Considérese el caso \( f(a) > 0 \), puesto que \( f \) es continua en \( a \), si \( \varepsilon > 0 \) existe un \( \delta > 0 \) tal que, para todo \( x \),
+    
+    \[
+        \text{si} \quad |x - a| < \delta, \quad \text{entonces} \quad |f(x) - f(a)| < \varepsilon.
+    \]
+    
+    Puesto que \( f(a) > 0 \), podemos tomar a \( f(a) \) como el \( \varepsilon \). Así, pues, existe \( \delta > 0 \) tal que para todo \( x \),
+    
+    \[
+        \text{si} \quad |x - a| < \delta, \quad \text{entonces} \quad |f(x) - f(a)| < f(a),
+    \]
+    
+    y esta última igualdad implica \( f(x) > 0 \).
+    
+    Puede darse una demostración análoga en el caso \( f(a) < 0 \); tómese \( \varepsilon = -f(a) \). O también se puede aplicar el primer caso a la función \( -f \).
+\end{proof}
 
 \end{document}
